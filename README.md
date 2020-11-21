@@ -6,7 +6,7 @@
 This script is suited for my own personal use (Including all my hardware target systems) and is not ready to be used 'as is'. 
 I.e. there are some personal additions that are of no use to most other people and will have to be purged from the script.
 
-Goal of script: Was done with all the 'tweaking' communities, bad advice etc, done with Windows 10 being an operating system with spying, telemetry, undesired behavior, and  desired a perfect desktop OS also suitable for high performance low latency gaming. Now it is just a matter of keeping it updated (Also for LTSC 2021?)
+Goal of script: Was done with all the 'tweaking' communities, bad advice etc, done with Windows 10 being an operating system with spying, telemetry, undesired behavior, and  desired a perfect desktop OS also suitable for high performance low latency gaming. NTLite was my previous project which was more a pain in the ass than anything, constantly breaking stuff, missing components which eventually resulted in subsequent new builds to test, not Anti-Cheat proof.
 
 
 
