@@ -58,4 +58,5 @@ And loads more!
 - Tools that are not published here but mentioned in the script.
 
 # How to use?
-- Run.cmd will start the corresponding elevated and unelevated scripts.
+- Run.cmd will start the corresponding elevated and unelevated scripts.ww
+- Script can be ran after every driver, cumulative update. 
