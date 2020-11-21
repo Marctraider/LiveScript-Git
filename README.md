@@ -4,7 +4,7 @@
 ## EXAMPLE Multi-Platform configuration script for Windows 10 Enterprise LTSC 1809 (x64).
 
 This script is suited for my own personal use (Including all my hardware target systems) and is not ready to be used 'as is'. 
-I.e. there are some personal additions that are of no use to most other people and will have to be purged from the script.
+I.e. there are some personal additions that are of no use to most other people and will have to be purged from the script. Also plenty of sections/scripts that still need to be worked on.
 
 Goal of script: Was done with all the 'tweaking' communities, bad advice etc, done with Windows 10 being an operating system with spying, telemetry, undesired behavior, and  desired a perfect desktop OS also suitable for high performance low latency gaming. NTLite was my previous project which was more a pain in the ass than anything, constantly breaking stuff, missing components which eventually resulted in subsequent new builds to test, not Anti-Cheat proof partly due to integrity violations etc.
 
@@ -28,6 +28,7 @@ Goal of script: Was done with all the 'tweaking' communities, bad advice etc, do
 - Root Certificates updated through logon script.
 - hosts file updated through logon script. (Host based ad blocking)
 - Use self-hosted NCSI file on router to detect if internet available on clients
+- Disabled nagging about 'do you want to initialize disks' if they contain fully encrypted filesystems in diskmgmt.msc (And subsequently destroy the disk)
     
 #Context Menu:
 - Set mitigations per executable (Prerequisite for allowing firewall rule)
