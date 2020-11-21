@@ -1,22 +1,27 @@
 
 # LiveScript-Git
-Multi-Platform configuration script for Windows 10 Enterprise LTSC 1809 (x64).
+
+##Multi-Platform configuration script for Windows 10 Enterprise LTSC 1809 (x64).
 (Ps. Great for gaming ;-)
 
-This script is suited for my own personal use (Including all my hardware systems) and is not ready to be used 'as is'. There are some personal additions that are of no use to most other people and will have to be purged from the script.
+This script is suited for my own personal use (Including all my hardware systems) and is not ready to be used 'as is'. 
+There are some personal additions that are of no use to most other people and will have to be purged from the script.
 
-Some tools that are required are not included here so you'll have to fetch them yourself.
+Recommended to test in a virtual machine first. Some tools that are required are not included here so you'll have to fetch them yourself.
 
 
 
-Performance:
+
+
+
+#Performance:
 
 - Reduce OS jitter and latency, smaller memory footprint. Loads of functions removed/disabled.
 - Mitigations: Globally disabled (Except for DEP), needs to be explictly enabled/disabled per executable before firewall rule is allowed.
 - Automatic power plan importing, remove useless plans.
 - Configuration of global and per adapter network settings.
     
-Security
+#Security
 
 - Firewall: Strict basic rules for core networking.
 - Unsolicited firewall rules created by windows/programs are automatically purged.
@@ -26,7 +31,7 @@ Security
 - Root Certificates updated through logon script.
 - hosts file updated through logon script. (Host based ad blocking)
     
-Context Menu:
+#Context Menu:
 - Set mitigations per executable (Prerequisite for allowing firewall rule)
 - Set firewall rules per executable (Either predefined for ease, or custom)
 - Set Large Pages per executable (Could improve performance)
@@ -37,7 +42,7 @@ Context Menu:
 - Powershell / cmd 'open here'
 - Purge all kind of useless default context menu entries
 
-Features:
+#Features:
 - Automatic installation of Visual Runtime C++ and Direct3D9 Runtime pack if not installed.
 - Automatic installation of HEIFImageExtension, VCLibs, VP9VideoExtensions, WebMediaExtensions
 - Restore Windows Photo Viewer
