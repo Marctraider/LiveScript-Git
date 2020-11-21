@@ -1,11 +1,12 @@
 
 # LiveScript-Git
 
-## Multi-Platform configuration script for Windows 10 Enterprise LTSC 1809 (x64).
-(Ps. Great for gaming ;-)
+## EXAMPLE Multi-Platform configuration script for Windows 10 Enterprise LTSC 1809 (x64).
 
 This script is suited for my own personal use (Including all my hardware target systems) and is not ready to be used 'as is'. 
 I.e. there are some personal additions that are of no use to most other people and will have to be purged from the script.
+
+Goal of script: No bs operating system without spying, telemetry, undesired behavior, and great gaming performance.
 
 
 
