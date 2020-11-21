@@ -9,7 +9,7 @@ I.e. there are some personal additions that are of no use to most other people a
 
 
 
-# Performance:
+Performance:
 
 - Reduce OS jitter and latency, smaller memory footprint. Loads of functions removed/disabled/tweaked.
 - Mitigations: Globally disabled (Except for DEP), needs to be explictly enabled/disabled per executable before firewall rule is allowed.
@@ -17,7 +17,7 @@ I.e. there are some personal additions that are of no use to most other people a
 - Configuration of global and per adapter network settings.
 - Set IRQ affinities / MSI mode on devices.
     
-# Security
+Security
 
 - Firewall: Strict basic rules for core networking.
 - Unsolicited firewall rules created by windows/programs are automatically purged.
@@ -28,7 +28,7 @@ I.e. there are some personal additions that are of no use to most other people a
 - hosts file updated through logon script. (Host based ad blocking)
 - Use self-hosted NCSI file on router to detect if internet available on clients
     
-# Context Menu:
+Context Menu:
 - Set mitigations per executable (Prerequisite for allowing firewall rule)
 - Set firewall rules per executable (Either predefined for ease, or custom)
 - Set Large Pages per executable (Could improve performance)
@@ -39,7 +39,7 @@ I.e. there are some personal additions that are of no use to most other people a
 - Powershell / cmd 'open here'
 - Purge all kind of useless default context menu entries
 
-# Features:
+Features:
 - Automatic installation of Visual Runtime C++ and Direct3D9 Runtime pack if not installed.
 - Automatic installation of HEIFImageExtension, VCLibs, VP9VideoExtensions, WebMediaExtensions
 - Restore Windows Photo Viewer
