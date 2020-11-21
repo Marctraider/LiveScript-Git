@@ -1,0 +1,30 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\exefile\shell\LargePages]
+@=""
+"MUIVerb"="Large Pages"
+"icon"="%SystemRoot%\\system32\\imageres.dll,11"
+"subcommands"=""
+
+[HKEY_CLASSES_ROOT\exefile\shell\LargePages\Shell]
+@=""
+
+
+
+[HKEY_CLASSES_ROOT\exefile\shell\LargePages\Shell\EnableLargePages]
+@=""
+"MUIVerb"="Enable Large Pages"
+"icon"="%SystemRoot%\\system32\\imageres.dll,11"
+
+[HKEY_CLASSES_ROOT\exefile\shell\LargePages\Shell\EnableLargePages\command]
+@="\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" \"-File\" \"C:\\Windows\\Scripts\\Context.ps1\" \"%1\" \"EnableLargePages\""
+
+
+
+[HKEY_CLASSES_ROOT\exefile\shell\LargePages\Shell\DisableLargePages]
+@=""
+"MUIVerb"="Disable Large Pages (Default)"
+"icon"="%SystemRoot%\\system32\\imageres.dll,11"
+
+[HKEY_CLASSES_ROOT\exefile\shell\LargePages\Shell\DisableLargePages\command]
+@="\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" \"-File\" \"C:\\Windows\\Scripts\\Context.ps1\" \"%1\" \"DisableLargePages\""
