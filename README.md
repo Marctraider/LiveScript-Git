@@ -16,10 +16,11 @@ Recommended to test in a virtual machine first. Some tools that are required are
 
 # Performance:
 
-- Reduce OS jitter and latency, smaller memory footprint. Loads of functions removed/disabled.
+- Reduce OS jitter and latency, smaller memory footprint. Loads of functions removed/disabled/tweaked.
 - Mitigations: Globally disabled (Except for DEP), needs to be explictly enabled/disabled per executable before firewall rule is allowed.
 - Automatic power plan importing, remove useless plans.
 - Configuration of global and per adapter network settings.
+- Set IRQ affinities / MSI mode on devices.
     
 # Security
 
@@ -30,6 +31,7 @@ Recommended to test in a virtual machine first. Some tools that are required are
 - Autorun registry entries (User) are automatically purged.
 - Root Certificates updated through logon script.
 - hosts file updated through logon script. (Host based ad blocking)
+- Use self-hosted NCSI file on router to detect if internet available on clients
     
 # Context Menu:
 - Set mitigations per executable (Prerequisite for allowing firewall rule)
