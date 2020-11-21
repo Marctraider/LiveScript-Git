@@ -4,13 +4,8 @@
 ## Multi-Platform configuration script for Windows 10 Enterprise LTSC 1809 (x64).
 (Ps. Great for gaming ;-)
 
-This script is suited for my own personal use (Including all my hardware systems) and is not ready to be used 'as is'. 
-There are some personal additions that are of no use to most other people and will have to be purged from the script.
-
-Recommended to test in a virtual machine first. Some tools that are required are not included here so you'll have to fetch them yourself.
-
-
-
+This script is suited for my own personal use (Including all my hardware target systems) and is not ready to be used 'as is'. 
+I.e. there are some personal additions that are of no use to most other people and will have to be purged from the script.
 
 
 
@@ -52,5 +47,13 @@ Recommended to test in a virtual machine first. Some tools that are required are
 - Purge default annoying sound scheme
 - Clean up control panel from unnecessary junk
     
-    
 And loads more!
+
+# Script prerequisites:
+- Activated Windows LTSC
+- Built-in Administrator account
+- Fully updated (Cumulative / NET4.x)
+- Tools that are not published here but mentioned in the script.
+
+# How to use?
+- Run.cmd will start the corresponding elevated and unelevated scripts.
