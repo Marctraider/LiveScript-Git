@@ -9,12 +9,12 @@ Some tools that are required are not included here so you'll have to fetch them 
 
 
 
-Performance:
+Performance
 
-    - Reduce OS jitter and latency, smaller memory footprint. Loads of functions removed/disabled.
-    - Mitigations: Globally disabled (Except for DEP), needs to be explictly enabled/disabled per executable before firewall rule is allowed.
-    - Automatic power plan importing, remove useless plans.
-    - Configuration of global and per adapter network settings.
+- Reduce OS jitter and latency, smaller memory footprint. Loads of functions removed/disabled.
+- Mitigations: Globally disabled (Except for DEP), needs to be explictly enabled/disabled per executable before firewall rule is allowed.
+- Automatic power plan importing, remove useless plans.
+- Configuration of global and per adapter network settings.
     
 Security:
 
