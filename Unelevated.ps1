@@ -7,21 +7,47 @@ $ErrorActionPreference = 'SilentlyContinue'
 Write-Host "Installing UWP AppX and Libraries" -ForegroundColor Green
 New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" -Name AllowAllTrustedApps -PropertyType Dword -Value 1 -Force
 cd ".\Runtime Libraries\UWP"
-$Installed = Get-AppxPackage -AllUsers | where-object {$_.PackageFullName -like "Microsoft.VCLibs.140.00_14.0.27323.0_x64__8wekyb3d8bbwe"}; if(-not $Installed) {
-    Add-AppxPackage .\Microsoft.VCLibs.140.00_14.0.27323.0_x64__8wekyb3d8bbwe.Appx
+
+$Installed = Get-AppxPackage -AllUsers | where-object {$_.PackageFullName -like "Microsoft.VCLibs.120.00_12.0.21005.1_x64__8wekyb3d8bbwe"}; if(-not $Installed) {
+    Add-AppxPackage .\Microsoft.VCLibs.120.00_12.0.21005.1_x64__8wekyb3d8bbwe.appx
     }
-$Installed = Get-AppxPackage -AllUsers | where-object {$_.PackageFullName -like "Microsoft.VCLibs.140.00_14.0.27323.0_x86__8wekyb3d8bbwe"}; if(-not $Installed) {
-    Add-AppxPackage .\Microsoft.VCLibs.140.00_14.0.27323.0_x86__8wekyb3d8bbwe.Appx
+$Installed = Get-AppxPackage -AllUsers | where-object {$_.PackageFullName -like "Microsoft.VCLibs.120.00_12.0.21005.1_x86__8wekyb3d8bbwe"}; if(-not $Installed) {
+    Add-AppxPackage .\Microsoft.VCLibs.120.00_12.0.21005.1_x86__8wekyb3d8bbwe.appx
     }
-$Installed = Get-AppxPackage -AllUsers | where-object {$_.PackageFullName -like "Microsoft.VP9VideoExtensions_1.0.21371.0_x64__8wekyb3d8bbwe"}; if(-not $Installed) {
-    Add-AppxPackage .\Microsoft.VP9VideoExtensions_1.0.21371.0_x64__8wekyb3d8bbwe.Appx
+$Installed = Get-AppxPackage -AllUsers | where-object {$_.PackageFullName -like "Microsoft.VCLibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe"}; if(-not $Installed) {
+    Add-AppxPackage .\Microsoft.VCLibs.140.00_14.0.29231.0_x64__8wekyb3d8bbwe.appx
     }
-$Installed = Get-AppxPackage -AllUsers | where-object {$_.PackageFullName -like "Microsoft.WebMediaExtensions_1.0.20875.0_x64__8wekyb3d8bbwe"}; if(-not $Installed) {
-    Add-AppxPackage .\Microsoft.WebMediaExtensions_1.0.20875.0_neutral___8wekyb3d8bbwe.AppxBundle
+$Installed = Get-AppxPackage -AllUsers | where-object {$_.PackageFullName -like "Microsoft.VCLibs.140.00_14.0.29231.0_x86__8wekyb3d8bbwe"}; if(-not $Installed) {
+    Add-AppxPackage .\Microsoft.VCLibs.140.00_14.0.29231.0_x86__8wekyb3d8bbwe.appx
     }
-$Installed = Get-AppxPackage -AllUsers | where-object {$_.PackageFullName -like "Microsoft.HEIFImageExtension_1.0.20982.0_x64__8wekyb3d8bbwe"}; if(-not $Installed) {
-    Add-AppxPackage .\Microsoft.HEIFImageExtension_1.0.20982.0_x64__8wekyb3d8bbwe.Appx
+$Installed = Get-AppxPackage -AllUsers | where-object {$_.PackageFullName -like "Microsoft.VCLibs.140.00.UWPDesktop_14.0.29231.0_x64__8wekyb3d8bbwe"}; if(-not $Installed) {
+    Add-AppxPackage .\Microsoft.VCLibs.140.00.UWPDesktop_14.0.29231.0_x64__8wekyb3d8bbwe.appx
     }
+$Installed = Get-AppxPackage -AllUsers | where-object {$_.PackageFullName -like "Microsoft.VCLibs.140.00.UWPDesktop_14.0.29231.0_x86__8wekyb3d8bbwe"}; if(-not $Installed) {
+    Add-AppxPackage .\Microsoft.VCLibs.140.00.UWPDesktop_14.0.29231.0_x86__8wekyb3d8bbwe.appx
+    }
+$Installed = Get-AppxPackage -AllUsers | where-object {$_.PackageFullName -like "Microsoft.HEIFImageExtension_1.0.32532.0_x64__8wekyb3d8bbwe"}; if(-not $Installed) {
+    Add-AppxPackage .\Microsoft.HEIFImageExtension_1.0.32532.0_x64__8wekyb3d8bbwe.appx
+    }
+$Installed = Get-AppxPackage -AllUsers | where-object {$_.PackageFullName -like "Microsoft.MPEG2VideoExtension_1.0.22661.0_x64__8wekyb3d8bbwe"}; if(-not $Installed) {
+    Add-AppxPackage .\Microsoft.MPEG2VideoExtension_1.0.22661.0_x64__8wekyb3d8bbwe.appx
+    }
+$Installed = Get-AppxPackage -AllUsers | where-object {$_.PackageFullName -like "Microsoft.RawImageExtension_2020.1012.1810.0_neutral__8wekyb3d8bbwe"}; if(-not $Installed) {
+    Add-AppxPackage .\Microsoft.RawImageExtension_2020.1012.1810.0_neutral__8wekyb3d8bbwe.appxbundle
+    }
+$Installed = Get-AppxPackage -AllUsers | where-object {$_.PackageFullName -like "Microsoft.VP9VideoExtensions_1.0.32521.0_x64__8wekyb3d8bbwe"}; if(-not $Installed) {
+    Add-AppxPackage .\Microsoft.VP9VideoExtensions_1.0.32521.0_x64__8wekyb3d8bbwe.appx
+    }
+$Installed = Get-AppxPackage -AllUsers | where-object {$_.PackageFullName -like "Microsoft.WebMediaExtensions_1.0.33271.0_neutral__8wekyb3d8bbwe"}; if(-not $Installed) {
+    Add-AppxPackage .\Microsoft.WebMediaExtensions_1.0.33271.0_neutral__8wekyb3d8bbwe.appxbundle
+    }
+$Installed = Get-AppxPackage -AllUsers | where-object {$_.PackageFullName -like "Microsoft.WebpImageExtension_1.0.32731.0_x64__8wekyb3d8bbwe"}; if(-not $Installed) {
+    Add-AppxPackage .\Microsoft.WebpImageExtension_1.0.32731.0_x64__8wekyb3d8bbwe.appx
+    }
+$Installed = Get-AppxPackage -AllUsers | where-object {$_.PackageFullName -like "Microsoft.AV1VideoExtension_1.1.32442.0_x64__8wekyb3d8bbwe"}; if(-not $Installed) {
+    Add-AppxPackage .\Microsoft.AV1VideoExtension_1.1.32442.0_x64__8wekyb3d8bbwe.appx
+    }
+
 cd ..\..
 
 
@@ -60,7 +86,7 @@ Register-ScheduledTask "Run" -Action $Sta -Settings $Stset -Trigger $Sttrig
 
 Unregister-ScheduledTask -TaskName MTHaxTool -Confirm:$false -erroraction 'silentlycontinue'
 $Sta = New-ScheduledTaskAction -Execute "C:\Program Files\AutoHotKey\AutoHotKey.exe" -Argument "C:\Users\Administrator\Desktop\MTHaxTool\mthaxtool-systemwide_module.ahk" -WorkingDirectory "C:\Users\Administrator\Desktop\MTHaxTool"
-$Stset = New-ScheduledTaskSettingsSet -Compatibility Win8 -Hidden -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit '00:00:00'
+$Stset = New-ScheduledTaskSettingsSet -Compatibility Win8 -Hidden -ExecutionTimeLimit '00:00:00'
 $Stset.Priority = 4 # Default priority for tasks is 'Below Normal' which is troublesome as all the child processes AHK spawns consequently start at the same priority level rather than 'Normal'.
 $Sttrig = New-ScheduledTaskTrigger -AtLogOn
 Register-ScheduledTask MTHaxTool -Action $Sta -Settings $Stset -Trigger $Sttrig
@@ -98,15 +124,15 @@ reg import ".\Registry\Context Add Menu Powershell.reg"
 reg import ".\Registry\Context Add Menu DPI Scaling.reg"
 reg import ".\Registry\Context Add Menu Firewall.reg"
 reg import ".\Registry\Context Add Menu Ownership.reg"
-reg import ".\Registry\Context Add Exploit Mitigations.reg"
-reg import ".\Registry\Context Add Large Pages.reg"
+reg import ".\Registry\Context Add Security Performance Mode.reg"
+reg import ".\Registry\Context Add Menu Bypass Tunnel (DSCP).reg"
+reg import ".\Registry\Context Add Run As Different User.reg"
 reg import ".\Registry\Restore Windows Photo Viewer.reg"
 reg import ".\Registry\Sysinternals Eula Prompts.reg"
 
 $model = (gwmi Win32_ComputerSystem).Model; if ( $model -like 'MS-7B12') {
     reg import ".\Registry\XonarSwitch Profiles.reg"
     }
-
 
 
 <#

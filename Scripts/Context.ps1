@@ -1,5 +1,25 @@
 $FileName = [io.path]::GetFileName("$($args[0])")
 
+if ($args[1] -like 'PerformanceMode') {
+$Path = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\$($FileName)"; if(-not (Test-Path -LiteralPath $Path)){ New-Item -ItemType String -Path $Path }
+New-ItemProperty -LiteralPath $Path -Name "MitigationOptions" -PropertyType Binary -Value ([byte[]](0x22,0x22,0x22,0x00,0x00,0x02,0x00,0x00,0x00,0x02,0x00,0x00,0x00,0x00,0x00,0x00)) -Force
+New-ItemProperty -LiteralPath $Path -Name "UseLargePages" -PropertyType Dword -Value 1 -Force
+Exit
+}
+
+if ($args[1] -like 'NormalMode') {
+$Path = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\$($FileName)"; if(-not (Test-Path -LiteralPath $Path)){ New-Item -ItemType String -Path $Path }
+New-ItemProperty -LiteralPath $Path -Name "MitigationOptions" -PropertyType Binary -Value ([byte[]](0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00)) -Force
+Remove-ItemProperty -LiteralPath "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\$($FileName)" -Name UseLargePages -Force -Confirm:$False
+Exit
+}
+
+if ($args[1] -like 'SecurityMode') {
+$Path = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\$($FileName)"; if(-not (Test-Path -LiteralPath $Path)){ New-Item -ItemType String -Path $Path }
+New-ItemProperty -LiteralPath $Path -Name "MitigationOptions" -PropertyType Binary -Value ([byte[]](0x11,0x11,0x11,0x00,0x00,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00)) -Force
+Exit
+}
+
 # Block Executable from Running
 if ($args[1] -like 'BlockExecutable') {
 $Path = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\$($FileName)"; if(-not (Test-Path -LiteralPath $Path)){ New-Item -ItemType String -Path $Path }
@@ -12,36 +32,16 @@ Remove-ItemProperty -LiteralPath "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVer
 Exit
 }
 
-# Per Executable Mitigation Options
-if ($args[1] -like 'EnableMitigations') {
-$Path = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\$($FileName)"; if(-not (Test-Path -LiteralPath $Path)){ New-Item -ItemType String -Path $Path }
-New-ItemProperty -LiteralPath $Path -Name "MitigationOptions" -PropertyType Binary -Value ([byte[]](0x11,0x11,0x11,0x00,0x00,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00)) -Force
+if ($args[1] -like 'BypassTunnel') {
+New-NetQosPolicy -Name "Bypass" -DSCPAction 46 -NetworkProfile All -AppPathNameMatchCondition "$($Args[0])" -IPProtocolMatchCondition BOTH
 Exit
 }
 
-if ($args[1] -like 'DisableMitigations') {
-$Path = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\$($FileName)"; if(-not (Test-Path -LiteralPath $Path)){ New-Item -ItemType String -Path $Path }
-New-ItemProperty -LiteralPath $Path -Name "MitigationOptions" -PropertyType Binary -Value ([byte[]](0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00)) -Force
+if ($args[1] -like 'DefaultTunnel') {
+Remove-NetQosPolicy -Name "Bypass" -Confirm:$False
 Exit
 }
 
-if ($args[1] -like 'DisableMitigationsIncludingDEP') {
-$Path = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\$($FileName)"; if(-not (Test-Path -LiteralPath $Path)){ New-Item -ItemType String -Path $Path }
-New-ItemProperty -LiteralPath $Path -Name "MitigationOptions" -PropertyType Binary -Value ([byte[]](0x02,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00)) -Force
-Exit
-}
-
-# Per Executable Large Pages
-if ($args[1] -like 'EnableLargePages') {
-$Path = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\$($FileName)"; if(-not (Test-Path -LiteralPath $Path)){ New-Item -ItemType String -Path $Path }
-New-ItemProperty -LiteralPath $Path -Name "UseLargePages" -PropertyType Dword -Value 1 -Force
-Exit
-}
-
-if ($args[1] -like 'DisableLargePages') {
-Remove-ItemProperty -LiteralPath "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\$($FileName)" -Name UseLargePages -Force -Confirm:$False
-Exit
-}
 
 # Firewall Rules
 # First Check if Exploit Mitigation Policy has been set on executable, otherwise abort.
