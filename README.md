@@ -6,10 +6,6 @@
 This script is suited for my own personal use (Including all my hardware target systems) and is not ready to be used 'as is'. 
 I.e. there are some personal additions that are of no use to most other people and will have to be purged from the script. Also plenty of sections/scripts that still need to be worked on.
 
-Goal of script: Was done with all the 'tweaking' communities, bad advice etc, done with Windows 10 being an operating system with spying, telemetry, undesired behavior, and  desired a perfect desktop OS also suitable for high performance low latency gaming. NTLite was my previous project which was more a pain in the ass than anything, constantly breaking stuff, missing components which eventually resulted in subsequent new builds to test, not Anti-Cheat proof partly due to integrity violations etc.
-
-
-
 #Performance:
 
 - Reduce OS jitter and latency, smaller memory footprint. Loads of functions removed/disabled/tweaked.
@@ -31,9 +27,8 @@ Goal of script: Was done with all the 'tweaking' communities, bad advice etc, do
 - Disabled nagging about 'do you want to initialize disks' if they contain fully encrypted filesystems in diskmgmt.msc (And subsequently destroy the disk)
     
 #Context Menu:
-- Set mitigations per executable (Prerequisite for allowing firewall rule)
+- Set Performance/Security mode per executable, affects exploit mitigations and large pages. (Prerequisite for allowing firewall rule)
 - Set firewall rules per executable (Either predefined for ease, or custom)
-- Set Large Pages per executable (Could improve performance)
 - Take Ownership on files
 - Classic Customize (Windows 7)
 - Disable DPI Scaling
@@ -43,7 +38,7 @@ Goal of script: Was done with all the 'tweaking' communities, bad advice etc, do
 
 #Features:
 - Automatic installation of Visual Runtime C++ and Direct3D9 Runtime pack if not installed.
-- Automatic installation of HEIFImageExtension, VCLibs, VP9VideoExtensions, WebMediaExtensions
+- Automatic installation of HEIFImageExtension, VCLibs, VP9VideoExtensions, WebMediaExtensions, etc.
 - Restore Windows Photo Viewer
 - OldNewExplorer setup to fix LTSC explorer border outline on 'Light' theme
 - Purge default annoying sound scheme
@@ -59,4 +54,4 @@ And loads more!
 
 # How to use?
 - Run.cmd will start the corresponding elevated and unelevated scripts.ww
-- Script can be ran after every driver, cumulative update. 
+- Script can be ran after every driver, cumulative update or other significant OS change. 
